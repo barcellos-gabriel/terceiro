@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Store - Sua Concessionária de Confiança</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <header class="p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold logo">Auto Store</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#produtos" class="nav-link">Veículos</a></li>
+                    <li><a href="#carrinho" class="nav-link">Carrinho<span id="cart-counter">0</span></a></li>
+                    <li><a href="#cadastro" class="nav-link">Cadastro</a></li>
+                    <li><a href="#login" class="nav-link">Login</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container mx-auto p-8">
+    </main>
+
+    <footer class="p-6 mt-8 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Auto Store. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <div id="notification"></div>
+
+    <template id="page-home">
+        <section class="text-center">
+            <h2 class="text-4xl font-bold mb-4">Bem-vindo à Auto Store!</h2>
+            <p class="text-lg text-gray-600 mb-8">O seu próximo carro está aqui. Qualidade e confiança que você pode sentir.</p>
+            <a href="#produtos" class="btn btn-primary nav-link-js">Ver Veículos</a>
+        </section>
+        <section class="mt-12">
+            <h3 class="text-3xl font-bold mb-6 text-center">Veículos em Destaque</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Veículo 1 -->
+                <article class="product-card">
+                    <img src="assets/OIP.webp" alt="Carro Sedan moderno" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Audi A7</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 220.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 2 -->
+                <article class="product-card">
+                    <img src="assets/baixados.webp" alt="Carro SUV espaçoso" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                         <div>
+                            <h4 class="text-xl font-semibold mb-2">Lamborghini urus</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 4.000.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 3 -->
+                <article class="product-card">
+                    <img src="assets/OIP.jpg" alt="Carro esportivo veloz" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Chevrolet camaro SS</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 650.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </template>
+
+    <template id="page-produtos">
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-center">Nosso Catálogo de Veículos</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Veículo 1 -->
+                <article class="product-card">
+                    <img src="assets/OIP.webp" alt="Carro Sedan moderno" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Audi A7</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 220.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 2 -->
+                <article class="product-card">
+                    <img src="assets/baixados.webp" alt="Carro SUV espaçoso" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Lamborghini urus</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 4.000.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 3 -->
+                <article class="product-card">
+                    <img src="assets/OIP.jpg" alt="Carro esportivo veloz" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Chevrolet camaro SS</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 650.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 4 -->
+                <article class="product-card">
+                    <img src="assets/OIP (1).webp" alt="Carro Hatch urbano" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Mercedes AMG A45</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 289.900,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 5 -->
+                <article class="product-card">
+                    <img src="assets/OIP (2).webp" alt="Pickup robusta" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Dodge ram TRX</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 1.500.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+                <!-- Veículo 6 -->
+                <article class="product-card">
+                    <img src="https://placehold.co/600x400/6366f1/ffffff?text=Elétrico" alt="Carro elétrico" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Elétrico Futuro EV</h4>
+                            <p class="text-lg font-bold text-primary-color mb-4">R$ 280.000,00</p>
+                        </div>
+                        <button class="btn btn-accent w-full add-to-cart-btn">Adicionar ao carrinho</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </template>
+
+    <template id="page-carrinho">
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-center">Meu Carrinho</h2>
+            <div id="cart-content" class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
+                <!-- O conteúdo do carrinho será gerado aqui pelo JS -->
+            </div>
+        </section>
+    </template>
+
+    <template id="page-cadastro">
+        <section class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6 text-center">Crie sua Conta</h2>
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="nome" class="block mb-2 font-medium">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" class="form-input" required>
+                </div>
+                <div>
+                    <label for="email-cadastro" class="block mb-2 font-medium">Email</label>
+                    <input type="email" id="email-cadastro" name="email" class="form-input" required>
+                </div>
+                <div>
+                    <label for="telefone" class="block mb-2 font-medium">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" class="form-input">
+                </div>
+                <div>
+                    <label for="endereco" class="block mb-2 font-medium">Endereço</label>
+                    <input type="text" id="endereco" name="endereco" class="form-input">
+                </div>
+                <div>
+                    <label for="senha-cadastro" class="block mb-2 font-medium">Senha</label>
+                    <input type="password" id="senha-cadastro" name="senha" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Cadastrar</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="page-login">
+        <section class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6 text-center">Acessar Conta</h2>
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="email-login" class="block mb-2 font-medium">Email</label>
+                    <input type="email" id="email-login" name="email" class="form-input" required>
+                </div>
+                <div>
+                    <label for="senha-login" class="block mb-2 font-medium">Senha</label>
+                    <input type="password" id="senha-login" name="senha" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Entrar</button>
+            </form>
+        </section>
+    </template>
+
+    <template id="page-sobre">
+        <section class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6">Sobre a Auto Store</h2>
+            <article>
+                <p>
+                    Fundada em 2010, a Auto Store é o resultado do sonho de apaixonados por carros. Nosso objetivo é transformar a experiência de compra e venda de veículos, oferecendo um serviço transparente, carros de procedência e um atendimento que entende as suas necessidades.
+                </p>
+                <h3 class="text-2xl font-semibold mt-6 mb-4">Nossa Missão</h3>
+                <p>
+                    Conectar pessoas aos seus carros dos sonhos, garantindo segurança, qualidade e as melhores condições do mercado. Queremos ser parte da sua jornada, oferecendo mais do que um carro, mas uma parceria de confiança.
+                </p>
+                <h3 class="text-2xl font-semibold mt-6 mb-4">Nossos Valores</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Confiança:</strong> Veículos periciados e com garantia. A sua segurança é o nosso compromisso.</li>
+                    <li><strong>Qualidade:</strong> Trabalhamos com um estoque selecionado para oferecer o melhor para você.</li>
+                    <li><strong>Paixão por Carros:</strong> Entendemos de carros e estamos prontos para ajudar você a fazer a melhor escolha.</li>
+                    <li><strong>Transparência:</strong> Negociações claras e sem surpresas.</li>
+                </ul>
+            </article>
+        </section>
+    </template>
+
+    <template id="page-contato">
+        <section class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6 text-center">Fale Conosco</h2>
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="nome-contato" class="block mb-2 font-medium">Nome</label>
+                    <input type="text" id="nome-contato" name="nome" class="form-input" required>
+                </div>
+                <div>
+                    <label for="email-contato" class="block mb-2 font-medium">Email</label>
+                    <input type="email" id="email-contato" name="email" class="form-input" required>
+                </div>
+                <div>
+                    <label for="assunto" class="block mb-2 font-medium">Assunto</label>
+                    <input type="text" id="assunto" name="assunto" class="form-input" required>
+                </div>
+                <div>
+                    <label for="mensagem" class="block mb-2 font-medium">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" class="form-input" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Enviar Mensagem</button>
+            </form>
+        </section>
+    </template>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+            const navLinks = document.querySelectorAll('nav .nav-link');
+            const notification = document.getElementById('notification');
+            const cartCounter = document.getElementById('cart-counter');
+            
+            // Armazena os itens do carrinho
+            let cart = [];
+
+            // Função para mostrar notificação
+            function showNotification(message) {
+                notification.textContent = message;
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000); // A notificação some após 2 segundos
+            }
+            
+            // Função para atualizar o contador do carrinho
+            function updateCartCounter() {
+                cartCounter.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            }
+
+            // Função para adicionar item ao carrinho
+            function addToCart(product) {
+                const existingProduct = cart.find(item => item.name === product.name);
+                if (existingProduct) {
+                    existingProduct.quantity++;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                showNotification(`'${product.name}' foi adicionado ao carrinho!`);
+                updateCartCounter();
+            }
+            
+            // Função para formatar moeda
+            function formatCurrency(value) {
+                return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+
+            // Função para renderizar o carrinho
+            function renderCart() {
+                const cartContent = document.getElementById('cart-content');
+                if (!cartContent) return;
+
+                if (cart.length === 0) {
+                    cartContent.innerHTML = '<p class="text-center text-gray-500">Seu carrinho está vazio.</p>';
+                    return;
+                }
+
+                let total = 0;
+                let tableHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Preço Unitário</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                cart.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    tableHTML += `
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.quantity}</td>
+                            <td>${formatCurrency(item.price)}</td>
+                            <td>${formatCurrency(subtotal)}</td>
+                        </tr>
+                    `;
+                });
+
+                tableHTML += `
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-right font-bold text-lg">Total:</td>
+                                <td class="font-bold text-lg">${formatCurrency(total)}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="text-center mt-8">
+                        <button class="btn btn-primary">Finalizar Compra</button>
+                    </div>
+                `;
+                
+                cartContent.innerHTML = tableHTML;
+            }
+
+            // Função para carregar o conteúdo da página
+            function loadPage(pageId) {
+                const pageName = pageId.startsWith('#') ? pageId.substring(1) : pageId;
+                const template = document.getElementById(`page-${pageName}`);
+                
+                if (template) {
+                    mainContent.innerHTML = template.innerHTML;
+                    // Se a página for o carrinho, renderiza o conteúdo dinâmico
+                    if (pageName === 'carrinho') {
+                        renderCart();
+                    }
+                } else {
+                    mainContent.innerHTML = document.getElementById('page-home').innerHTML;
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${pageName}`) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                window.scrollTo(0, 0);
+            }
+
+            // Delegação de eventos para o corpo do documento
+            document.body.addEventListener('click', function(event) {
+                // Lógica para adicionar ao carrinho
+                if (event.target.matches('.add-to-cart-btn')) {
+                    const card = event.target.closest('.product-card');
+                    const name = card.querySelector('h4').textContent;
+                    const priceString = card.querySelector('p').textContent;
+                    // Converte o preço de string (ex: "R$ 120.000,00") para número
+                    const price = parseFloat(priceString.replace('R$', '').replace(/\./g, '').replace(',', '.'));
+                    
+                    addToCart({ name, price });
+                }
+
+                // Lógica para navegação interna
+                if (event.target.matches('.nav-link-js')) {
+                    event.preventDefault();
+                    const pageId = event.target.getAttribute('href');
+                    window.location.hash = pageId;
+                }
+            });
+
+            // Adiciona event listeners aos links da navegação principal
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const pageId = event.currentTarget.getAttribute('href');
+                    window.location.hash = pageId;
+                });
+            });
+
+            // Listener para mudanças no hash da URL
+            window.addEventListener('hashchange', () => {
+                const pageId = window.location.hash || '#home';
+                loadPage(pageId);
+            });
+
+            // Carrega a página inicial
+            const initialPage = window.location.hash || '#home';
+            loadPage(initialPage);
+        });
+    </script>
+
+</body>
+</html>

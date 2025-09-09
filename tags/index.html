@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Demonstração HTML</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">Demonstração de Elementos HTML</h1>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Link em Nova Aba</h2>
+            <p class="text-lg">
+                Para se aprofundar nos padrões da web, um ótimo recurso é o portal 
+                <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 hover:underline">MDN Web Docs</a>.
+                O atributo <strong>target="_blank"</strong> faz o link abrir em uma nova aba.
+            </p>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Imagem com Texto Alternativo</h2>
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80" 
+                 alt="Um laptop exibindo código HTML em um editor de texto, com destaque para a tag 'body'."
+                 class="w-full max-w-lg mx-auto rounded-lg shadow-md">
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Alteração de Conteúdo</h2>
+            <p class="text-lg">
+                Atenção: A data de entrega do projeto foi alterada de <del class="text-red-500">Sexta-feira</del> para <ins class="text-green-600 no-underline font-semibold">Segunda-feira</ins>.
+            </p>
+        </section>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 text-blue-800 p-6 rounded-r-lg mb-8 shadow">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Citações sobre Programação</h2>
+
+            <div class="mb-6">
+                <p class="mb-2">Uma citação famosa sobre a simplicidade na engenharia de software:</p>
+                <blockquote class="text-gray-700">
+                    Há duas maneiras de construir um projeto de software: uma é fazê-lo tão simples que obviamente não há deficiências, e a outra é fazê-lo tão complicado que não há deficiências óbvias. A primeira é muito mais difícil.
+                </blockquote>
+                <cite class="block text-right mt-2">– C.A.R. Hoare</cite>
+            </div>
+
+            <div>
+                <p>
+                    Como disse o célebre autor de "Código Limpo", Robert C. Martin: 
+                    <q class="font-medium">A verdade só pode ser encontrada em um lugar: o código.</q>
+                </p>
+            </div>
+        </div>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Uso de &lt;span&gt; para Estilo</h2>
+            <p class="text-lg">
+                A tag &lt;span&gt; é um container genérico em linha, útil para aplicar estilos a um trecho específico de texto, como esta <span class="text-purple-600 font-bold">palavra em roxo</span>, sem afetar o resto do parágrafo.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Exemplo de Código Formatado</h2>
+            <p class="text-lg mb-3">Para criar um link em HTML, usamos a tag &lt;a&gt;, como no exemplo abaixo:</p>
+            <pre class="bg-gray-800 text-white p-4 rounded-lg shadow-md overflow-x-auto"><code>&lt;!-- Link simples para um site --&gt;
+&lt;a href="https://www.google.com"&gt;Ir para o Google&lt;/a&gt;</code></pre>
+        </section>
+    </div>
+
+</body>
+</html>
