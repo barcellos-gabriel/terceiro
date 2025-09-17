@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Acadêmico - Terceiro Ano</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Feather Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+        /* Estilo para usar a fonte Inter com Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Efeito de gradiente animado para o fundo */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efeito de brilho na borda do card */
+        .card-hover-effect {
+            position: relative;
+            background-clip: padding-box; /* Garante que o fundo não sangre para a borda */
+            border: 1px solid transparent;
+        }
+        .card-hover-effect:before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px; /* Evita sobreposição feia */
+            border-radius: inherit; /* Segue o arredondamento do card */
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover:before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-300">
+
+    <div class="container mx-auto px-6 py-12">
+
+        <!-- Cabeçalho -->
+        <header class="text-center mb-12 flex flex-col items-center">
+            <img src="./assets/231228972.jpg" alt="Foto do perfil" class="w-32 h-32 rounded-full mb-6 border-4 border-gray-700 shadow-lg">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">Portfólio - Terceiro Ano</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">Uma coleção dos meus projetos e aprendizados durante o terceiro ano do ensino médio.</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://github.com/barcellosgabriel" class="text-gray-400 hover:text-white transition-colors"><i data-feather="github"></i></a>
+                <a href="https://www.linkedin.com/in/gabriel-barcellos-1baab5384/" class="text-gray-400 hover:text-white transition-colors"><i data-feather="linkedin"></i></a>
+                <a href="mailto:gabrielbarcellos1403@gmail.com" class="text-gray-400 hover:text-white transition-colors"><i data-feather="mail"></i></a>
+            </div>
+        </header>
+
+        <main>
+            <!-- O conteúdo será inserido aqui pelo JavaScript -->
+            <section id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </section>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="text-center mt-24 pt-8 border-t border-gray-800">
+             <p class="text-gray-500">&copy; 2025 Gabriel Barcellos. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- PROJETOS DO TERCEIRO ANO ---
+            const projects = [
+                { 
+                    year: 3, 
+                    title: 'Site 1 do 3º Ano', 
+                    description: 'Descrição do projeto 1.', 
+                    image: `./assets/24.png`, 
+                    link: './terceiro/sitemes/index.html', 
+                    tags: ['HTML','CSS','JavaScript'] 
+                },
+                { 
+                    year: 3, 
+                    title: 'Loja de veiculos', 
+                    description: 'Projeto sobre uma loja de veiculos que criei.', 
+                    image: `./assets/25.png`, 
+                    link: './terceiro/sitevenda/index.html', 
+                    tags: ['HTML','CSS','JavaScript'] 
+                },
+                { 
+                    year: 3, 
+                    title: 'Demonstraçao de elementos HTML', 
+                    description: 'Projeto sobre uma demonstraçao de elementos HTML que criei.', 
+                    image: `./assets/26.png`, 
+                    link: './terceiro/tags/index.html', 
+                    tags: ['HTML','CSS','JavaScript'] 
+                }
+            ];
+
+            const container = document.getElementById('projects-container');
+
+            const tagColors = {
+                'HTML': 'bg-indigo-500 text-indigo-300',
+                'CSS': 'bg-pink-500 text-pink-300',
+                'JavaScript': 'bg-yellow-500 text-yellow-300',
+                'Framework': 'bg-green-500 text-green-300'
+            }
+
+            function renderProjects() {
+                container.innerHTML = ''; // Limpa os projetos existentes
+                
+                if (projects.length === 0) {
+                    container.innerHTML = `<p class="text-gray-400 col-span-full text-center">Nenhum projeto encontrado.</p>`;
+                    return;
+                }
+
+                projects.forEach(project => {
+                    const tagsHTML = project.tags.map(tag => {
+                        const colorClass = tagColors[tag] || 'bg-gray-500 text-gray-300';
+                        return `<span class="${colorClass} bg-opacity-20 text-xs font-semibold px-2.5 py-1 rounded-full">${tag}</span>`;
+                    }).join('');
+
+                    const projectCard = `
+                        <div class="bg-gray-900 bg-opacity-40 backdrop-blur-lg rounded-xl overflow-hidden shadow-2xl transition-all duration-300 card-hover-effect transform hover:-translate-y-2">
+                            <img src="${project.image}" alt="Imagem do ${project.title}" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-white mb-2">${project.title}</h3>
+                                <p class="text-gray-400 mb-4 text-sm leading-relaxed">${project.description}</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    ${tagsHTML}
+                                </div>
+                                <a href="${project.link}" target="_blank" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+                                    <i data-feather="arrow-up-right" class="w-4 h-4"></i> Ver Site
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += projectCard;
+                });
+                feather.replace(); // Re-ativa os ícones
+            }
+
+            // Renderiza os projetos ao carregar a página
+            renderProjects();
+        });
+
+        // Ativa os ícones feather na carga inicial global
+        feather.replace();
+    </script>
+</body>
+</html>
