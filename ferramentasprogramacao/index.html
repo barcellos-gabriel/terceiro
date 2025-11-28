@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Web e Mobile: Uma Pesquisa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="introduction">
+        <h2>👋 Introdução</h2>
+        <p>Para que aplicativos modernos como iFood, Nubank ou Spotify funcionem, é necessária uma "dança" sincronizada entre três pilares: o <strong>Front-end</strong> 🎨, o <strong>Banco de Dados</strong> 🗄️ e o <strong>Mobile</strong> 📱. Esta página explora como essas tecnologias se conectam em sistemas reais.</p>
+    </section>
+
+    <div class="content">
+        <section class="filter">
+            <h3>📑 Tópicos</h3>
+            <button class="btn-nav" onclick="mudarConteudo('frontend', this)">💻 1. HTML, CSS e JS</button>
+            <button class="btn-nav" onclick="mudarConteudo('banco', this)">🗄️ 2. Banco de Dados</button>
+            <button class="btn-nav" onclick="mudarConteudo('mobile', this)">📱 3. Mobile</button>
+            <button class="btn-nav" onclick="mudarConteudo('integracao', this)">⚙️ 4. Integração do Sistema</button>
+            <button class="btn-nav" onclick="mudarConteudo('exemplos', this)">💡 5. Exemplos Reais</button>
+        </section>
+
+        <main id="area-conteudo">
+            </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
